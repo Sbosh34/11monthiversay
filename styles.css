@@ -1,0 +1,182 @@
+/* General styles */
+body {
+    background-color: #ffe6f0; /* Light pink background */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: #333;
+}
+
+header {
+    padding: 20px;
+    background-color: #ff66a3; /* Bright pink header */
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ff66a3; /* Bright pink footer */
+    color: white;
+}
+
+/* White box styling for message and photos */
+.white-box {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Message styling */
+.message p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #d1477a; /* Romantic pinkish-red */
+    font-family: 'Parisienne', cursive;
+}
+
+/* Photo grid styling */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-gap: 10px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Crops images to fit nicely */
+    border-radius: 10px;
+}
+
+/* Interactive section */
+.interactive {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Beautiful button styling */
+#surpriseButton {
+    background-color: #ff99cc;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-family: 'Parisienne', cursive;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    animation: pulse 2s infinite;
+}
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 2em;
+    color: #ff66a3;
+    animation: float 10s infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+    .photo-grid img {
+        height: auto;
+    }
+}
+figcaption {
+    font-family: 'Parisienne', cursive;
+    font-size: 1.2em;
+    color: #d1477a;
+    margin-top: 5px;
+}
+#specialMomentsButton {
+    background-color: #ff99cc;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-family: 'Parisienne', cursive;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#specialMomentsButton:hover {
+    background-color: #ff66a3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#surpriseButton:hover {
+    background-color: #ff66a3; /* Darker pink on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Hidden message styling */
+#hiddenMessage {
+    font-size: 1.5em;
+    color: #d1477a;
+    margin-top: 20px;
+    font-family: 'Parisienne', cursive;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: 1fr; /* Stacks photos vertically */
+    }
+    .photo-grid img {
+        height: auto; /* Maintains aspect ratio */
+    }
+}
+.message, .photo-grid img {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.photo-grid img {
+    animation-delay: 0.5s; /* Staggers the photo fade-ins */
+}
